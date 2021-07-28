@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         Showroom showroom = new Showroom();
-        new Thread(new Manufacture(showroom)).start();
+        new Manufacture(showroom).start();
 
         new Thread(null, showroom::sellCar, "клиент 1").start();
         new Thread(null, showroom::sellCar, "клиент 2").start();
